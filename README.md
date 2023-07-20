@@ -5,4 +5,6 @@
 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/3157b4986130a9103b59/test_coverage)](https://codeclimate.com/github/fyodor91/python-project-50/test_coverage)
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/3157b4986130a9103b59/maintainability)](https://codeclimate.com/github/fyodor91/python-project-50/maintainability)
+
 [gendiff](https://asciinema.org/a/596685)
