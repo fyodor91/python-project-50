@@ -1,5 +1,10 @@
-def generate_diff(file_1, file_2):
+import json
+
+
+def generate_diff(first_file, second_file):
     result = []
+    file_1 = json.load(open(first_file))
+    file_2 = json.load(open(second_file))
     set_1 = set((k, v) for k, v in file_1.items())
     set_2 = set((k, v) for k, v in file_2.items())
     for line in sorted(set_1 | set_2, key=lambda x: (x[0], x in set_2)):

@@ -2,8 +2,7 @@
 
 
 import argparse
-import json
-from gendiff import generate_diff
+from gendiff.generate import generate_diff
 
 
 def parse_arguments():
@@ -18,8 +17,8 @@ def parse_arguments():
 
 def main():
     pathes = parse_arguments()
-    file_1 = json.load(open(pathes.first_file))
-    file_2 = json.load(open(pathes.second_file))
+    file_1 = pathes.first_file
+    file_2 = pathes.second_file
     return generate_diff(file_1, file_2)
 
 
