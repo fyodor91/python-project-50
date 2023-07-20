@@ -15,3 +15,7 @@ reinstall:
 
 test:
 	poetry run pytest
+
+check:
+	poetry run pytest
+	poetry run flake8 gendiff
