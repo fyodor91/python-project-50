@@ -9,4 +9,4 @@
 
 [JSON-files difference](https://asciinema.org/a/596685)
 
-[YAML-files difference](https://asciinema.org/a/598356)
+[YAML-files difference](https://asciinema.org/a/598498)
