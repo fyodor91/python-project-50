@@ -1,1 +1,5 @@
+.venv/
 dist/
+__pycache__/
+coverage.xml
+.README.md.swp
