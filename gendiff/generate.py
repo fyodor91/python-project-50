@@ -9,6 +9,14 @@ def define_format(file):
         return yaml.safe_load(open(file))
 
 
+def lower_bool(string):
+    if 'False' in string:
+        return string.replace('False', 'false')
+    elif 'True' in string:
+        return string.replace('True', 'true')
+    return string
+
+
 def generate_diff(first_file, second_file):
     result = []
     file_1 = define_format(first_file)
@@ -17,9 +25,12 @@ def generate_diff(first_file, second_file):
     set_2 = set((k, v) for k, v in file_2.items())
     for line in sorted(set_1 | set_2, key=lambda x: (x[0], x in set_2)):
         if line in set_1-set_2:
-            result.append(f'- {line[0]}: {line[1]}')
+            string = f'- {line[0]}: {line[1]}'
+            result.append(lower_bool(string))
         elif line in set_2-set_1:
-            result.append(f'+ {line[0]}: {line[1]}')
+            string = f'+ {line[0]}: {line[1]}'
+            result.append(lower_bool(string))
         else:
-            result.append(f'  {line[0]}: {line[1]}')
+            string = f'  {line[0]}: {line[1]}'
+            result.append(lower_bool(string))
     return '{\n' + '\n'.join(result) + '\n}'
